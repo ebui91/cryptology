@@ -1,0 +1,45 @@
+.nav-main-container{
+  height: 80px;
+  width: 100%;
+  background: #333;
+  color: #F2F2F2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  opacity: 0.9;
+}
+
+.nav-left{
+  font-family: Pasajero;
+}
+
+.nav-left a{
+  color: #F2F2F2;
+}
+
+.nav-mid{
+  font-family: Montserrat;
+}
+
+.nav-mid p{
+  color: #F2F2F2;
+  cursor: pointer;
+}
+
+.nav-mid p:hover{
+  color: #00ABFF;
+  transition: all ease 0.6s;
+}
+
+.log-btn{
+  height: 35px;
+  width: 100px;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  outline: none;
+}
