@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import NavBar from '../NavBar/NavBar';
+import InfiniteScroll from 'react-infinite-scroll';
 import { Link } from 'react-router-dom';
 import './HomePage.css';
 //https://www.cryptocompare.com/${ coin.ImageUrl }
@@ -25,20 +26,21 @@ class HomePage extends Component{
     //axios.post this coin to the database with user id
   }
 
-
   render() {
     {console.log('coinList', this.state.coinList)}
+    const BaseImageUrl= 'https://www.cryptocompare.com';
     const coins= this.state.coinList.map((coin, index)=> {
       return(
-        <Link to={ `/detailed/${ coin && coin.Name }/${ coin && coin.Id }` } key={ index }>
-          <div className='coin-container'>
-            <h3>{ coin && coin.CoinName } ({ coin && coin.Name })</h3>
-            <img className='coin-logo' src={ `www.cryptocompare.com/${ coin && coin.ImageUrl }` } alt='coin-logo'></img>
-            <p>Algorithm: { coin && coin.Algorithm}</p>
-
-            <button className='btn fav-btn' onClick={ this.addFavorite }> Add to Favorites </button>
-          </div>
-        </Link>
+        <div className='coin-card' key={ index }>
+          <Link to={ `/detailed/${ coin && coin.Name }/${ coin && coin.Id }` }>
+            <div className='coin-container'>
+              <h3>{ coin && coin.CoinName } ({ coin && coin.Name })</h3>
+              <img className='coin-logo' src={ `${BaseImageUrl}${coin && coin.ImageUrl}` } alt='coin-logo'></img>
+              <p>Algorithm: { coin && coin.Algorithm}</p>
+            </div>
+          </Link>
+          <button className='btn fav-btn' onClick={ this.addFavorite }> Add to Favorites </button>
+        </div>
       )
     })
     return (

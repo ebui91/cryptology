@@ -21,10 +21,7 @@ class Detailed extends Component{
     })
     axios.get(`https://min-api.cryptocompare.com/data/price?fsym=${ this.props.match.params.coin }&tsyms=USD`).then(response=> {
       this.setState({ price: response.data });
-      // console.log(response.data);
     });
-
-
   }
 
   render(){
@@ -34,6 +31,7 @@ class Detailed extends Component{
 
         <div className='detailed-body'>
           <h1>{ this.state.coin.General && this.state.coin.General.H1Text }</h1>
+          <img className='coin-logo' src={ this.state.coin.SEO && `${this.state.coin.SEO.BaseImageUrl}${this.state.coin.SEO.OgImageUrl}` }></img>
           <p>Description:</p>
           <p>{ this.state.coin.General && this.state.coin.General.Description }</p>
           <br/>

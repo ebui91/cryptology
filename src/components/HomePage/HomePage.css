@@ -24,24 +24,36 @@
   text-align: center;
 }
 
-.coin-container{
-  height: 300px;
+.coin-card{
+  height: 350px;
   width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   border-style: solid;
   border-color: #777;
   border-width: 1px;
   box-shadow: 5px 5px 5px #888;
   color: #111;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
   margin: 15px;
 }
 
+.coin-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #111;
+}
+
+.coin-card:hover{
+  background: red;
+}
+
 .coin-logo{
-  height: 75px;
-  width: 75px;
+  height: 100px;
+  width: 100px;
+  margin: 0;
 }
 
 .fav-btn{
