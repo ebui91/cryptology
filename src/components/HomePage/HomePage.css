@@ -47,7 +47,9 @@
 }
 
 .coin-card:hover{
-  background: red;
+  transition: all ease 0.6s;
+  box-shadow: 5px 5px 5px #66C8FF;
+  transform: scale(1.1);
 }
 
 .coin-logo{
@@ -68,10 +70,7 @@
 }
 
 .fav-btn:hover{
-  background: #FFF;
-  color: #333;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #111;
+  background: #66C8FF;
+  color: #FFF;
   transition: all ease 0.6s;
 }

@@ -25,19 +25,20 @@ class Detailed extends Component{
   }
 
   render(){
+    console.log(this.state.coin.General && this.state.coin.General.Sponsor.Link);
     return(
       <div className='detailed-main-container'>
         <NavBar />
-
         <div className='detailed-body'>
           <h1>{ this.state.coin.General && this.state.coin.General.H1Text }</h1>
-          <img className='coin-logo' src={ this.state.coin.SEO && `${this.state.coin.SEO.BaseImageUrl}${this.state.coin.SEO.OgImageUrl}` }></img>
+          <img className='coin-logo' src={ this.state.coin.SEO && `${this.state.coin.SEO.BaseImageUrl}${this.state.coin.SEO.OgImageUrl}` } alt='coin-logo'></img>
           <p>Description:</p>
           <p>{ this.state.coin.General && this.state.coin.General.Description }</p>
           <br/>
           <p>Features:</p>
-            <p>{ this.state.coin.General && this.state.coin.General.Features }</p>
+          <p>{ this.state.coin.General && this.state.coin.General.Features }</p>
           <h3>Current Value: ${ this.state.price.USD }</h3>
+          <a href= { this.state.coin.General && this.state.coin.General.Sponsor.Link } target='_blank'><button className='btn'>BUY</button></a>
         </div>
       </div>
     )

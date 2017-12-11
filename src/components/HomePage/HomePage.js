@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import NavBar from '../NavBar/NavBar';
-import InfiniteScroll from 'react-infinite-scroll';
 import { Link } from 'react-router-dom';
 import './HomePage.css';
 //https://www.cryptocompare.com/${ coin.ImageUrl }
@@ -18,6 +17,7 @@ class HomePage extends Component{
 
   componentWillMount(){
     axios.get('http://localhost:3001/api/currencies').then(response=> {
+      console.log(response.data);
       this.setState({ coinList: Object.keys(response.data.Data).map(key=> response.data.Data[key]) });
     });
   }
@@ -27,7 +27,6 @@ class HomePage extends Component{
   }
 
   render() {
-    {console.log('coinList', this.state.coinList)}
     const BaseImageUrl= 'https://www.cryptocompare.com';
     const coins= this.state.coinList.map((coin, index)=> {
       return(
